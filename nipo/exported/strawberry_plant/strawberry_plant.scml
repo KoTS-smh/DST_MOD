@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="b5">
+    <folder id="0" name="strawberry_plant">
+        <file id="0" name="strawberry_plant/strawberry_plant.png" width="300" height="300" pivot_x="0.516556" pivot_y="0.456954"/>
+    </folder>
+    <entity id="0" name="strawberry_plant">
+        <animation id="0" name="idle" length="1000">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" name="strawberry_plant" folder="0" file="0" abs_x="-1.209667" abs_y="-109.815664" abs_pivot_x="0.51919" abs_pivot_y="0.077568" abs_angle="0" abs_scale_x="1" abs_scale_y="1" abs_a="1" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="12">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+                <key id="2" time="250">
+                    <object_ref id="0" timeline="0" key="2" z_index="0"/>
+                </key>
+                <key id="3" time="500">
+                    <object_ref id="0" timeline="0" key="3" z_index="0"/>
+                </key>
+                <key id="4" time="750">
+                    <object_ref id="0" timeline="0" key="4" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="strawberry_plant">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-1.209667" y="-109.815664" pivot_x="0.51919" pivot_y="0.077568" angle="0"/>
+                </key>
+                <key id="1" time="12">
+                    <object folder="0" file="0" x="-2" y="4" angle="0"/>
+                </key>
+                <key id="2" time="250" spin="-1">
+                    <object folder="0" file="0" x="-1.571521" y="-23.417134" pivot_x="0.517191" pivot_y="0.365564" angle="0.5" scale_x="1"/>
+                </key>
+                <key id="3" time="500" spin="-1">
+                    <object folder="0" file="0" x="-1.450903" y="-52.216644" pivot_x="0.517857" pivot_y="0.269565" angle="0" scale_x="1"/>
+                </key>
+                <key id="4" time="750">
+                    <object folder="0" file="0" x="-1.330285" y="-81.016154" pivot_x="0.518524" pivot_y="0.173567" angle="359.5" scale_y="1"/>
+                </key>
+            </timeline>
+        </animation>
+    </entity>
+</spriter_data>
