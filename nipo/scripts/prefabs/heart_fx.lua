@@ -46,24 +46,34 @@ local function InitEnvelope()
     IntColour = nil
 end
 
-local GLOW_MAX_LIFETIME = 1
+local GLOW_MAX_LIFETIME = 2
 
 -- 粒子触发器里第三个参数fn里调用的方法，展示粒子大小，方向，速度，生命周期等等信息
 local function emit_glow_fn(effect, emitter_fn)
-    local vx, vy, vz = .005 * UnitRand(), 0, .005 * UnitRand()
-    local lifetime = GLOW_MAX_LIFETIME --* (.9 + math.random() * .1)
+    local vx, vy, vz = 0 , 0.05 * UnitRand() , 0
+    local lifetime = GLOW_MAX_LIFETIME * (.75 + math.random() * .25)
     local px, py, pz = emitter_fn()
 
-    px = px + math.random(-1,1) * .2 -- 给x轴一个偏移量
-    py = py + 4.2                    -- 给y轴一个偏移量，测试发现y轴才是高度轴
-    pz = pz + math.random(-1,1) * .2 -- 给z轴一个偏移量。给坐标偏移量是为了让出现的心不会在一块挤着
+    local diff_x = math.random(-3,3) -- 给x轴一个偏移量
+    local diff_z = math.random(-3,3) -- 给z轴一个偏移量。给坐标偏移量是为了让出现的心不会在一块挤着
+    if diff_x >= 0 then
+        px = px + 0.3 + diff_x
+    else
+        px = px - 0.3 + diff_x
+    end
+    if diff_z >= 0 then
+        pz = pz + 0.3 + diff_z
+    else
+        pz = pz - 0.3 + diff_z
+    end
+    py = py + 1                    -- 给y轴一个偏移量，测试发现y轴才是高度轴
     local uv_offset = math.random(0, 3) * .25
     effect:AddRotatingParticle(
             0,
             lifetime,           -- lifetime  生命周期
             px, py, pz,         -- position  位置
             vx, vy, vz,         -- velocity  速度
-            uv_offset,-- angle               角度
+            uv_offset,-- angle               角度S
             0    -- angle velocity           角速度
     )
 end
@@ -94,7 +104,7 @@ local function fn()
     -- 渲染的资源，就是做的贴图与一个shader
     effect:SetRenderResources(0, ANIM_HEART_TEXTURE, REVEAL_SHADER)
     -- 最大粒子数
-    effect:SetMaxNumParticles(0, 128)
+    effect:SetMaxNumParticles(0, 6)
     -- 循环状态开启
     effect:SetRotationStatus(0, true)
     -- 最大生命周期
