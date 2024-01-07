@@ -1,9 +1,9 @@
 -- 名称
-name = "にぽ"
+name = "玲宮にぽMOD"
 -- 描述
 description = "nipo Mod"
 -- 作者
-author = "にぽ&KoTS"
+author = "玲宮にぽ&KoTS"
 -- 版本
 version = "0.1"
 -- klei官方论坛地址，为空则默认是工坊的地址
@@ -24,5 +24,5 @@ all_clients_require_mod = true
 -- 饥荒api版本，固定填10
 api_version = 10
 
--- mod的配置项，后面介绍
+-- mod的配置项
 configuration_options = {}
